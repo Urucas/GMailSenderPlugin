@@ -1,24 +1,44 @@
-GMailSenderPlugin
-=================
+GMailSenderPlugin Beta
+======================
 
-Phonegap 2.5.0 Plugin for Android to send email without intents, using your gmail account user and password. 
+Phonegap 2.5.0 Beta Plugin for Android to send emails without intents, using your gmail account user and password. 
 
-Based on javamail-android source 
+Based on javamail-android source <br />
 https://code.google.com/p/javamail-android/
 
-and Jon Simon example; 
+And Jon Simon example <br />
 http://www.jondev.net/articles/Sending_Emails_without_User_Intervention_%28no_Intents%29_in_Android
 
+Installation
+============
 
+* Add to Build Path the **activation.jar**, **mail.jar**, **additional.jar** from /libs  
 
-To start using this plugin:
+* Add the plugin markup to the **config.xml** file of the phonegap project 
+``<plugin name="GmailsenderPlugin" value="com.urucas.plugins.GmailsenderPlugin"/> ``
 
-1. Add the plugin to the config.xml file of the phonegap project; 
-<plugin name="GmailsenderPlugin" value="com.urucas.plugins.GmailsenderPlugin"/>
+* Replace your user and password on the GmailsenderPlugin.java class
+<code>
+  private Mail m = new Mail("youremail@gmail.com", "yourpassword");
+</code>
 
-2. Add to Build Path the java files; activation.jar, mail.jar and additional.jar
+Usage
+=====
 
-3. Add your user and password on the GmailsenderPlugin.java Mail
+<code>
+cordova.exec(
+  function(a){ /* success callback */ }, 
+  function(err) { /* error callback */ }, 
+  "GmailsenderPlugin", 
+  "send",
+  [["mail1@gmail.com","mail2@gmail.com"], "This is the subject", "This is the body"]
+);
+</code>
 
-4. Call the plugin function on your javascript source after the deviceReady: 
-cordova.exec(function(a){ /* success callback */ }, function(err) { /* error callback */ }, "GmailsenderPlugin", "send",[["mail1@gmail.com","mail2@gmail.com"], "This is the subject", "This is the body"]);
+License
+=======
+The source Code is available under same licenses as javamail which is :
+
+* CDDL-1.0
+* GPL-2.0
+* BSD
