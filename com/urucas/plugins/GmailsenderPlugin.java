@@ -1,5 +1,17 @@
 package com.urucas.plugins;
 
+/*!
+ *  
+ * GMailSenderPlugin.java
+ * Created By Urucas
+ * 
+ * The source Code is available under 
+ * same licenses as javamail which are:
+ * CDDL-1.0, GPL-2.0, BSD
+ * 
+ */
+
+
 import java.util.Date;
 import java.util.Properties;
 
