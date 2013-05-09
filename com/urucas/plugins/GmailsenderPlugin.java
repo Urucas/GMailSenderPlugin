@@ -25,7 +25,7 @@ import org.json.JSONException;
 
 public class GmailsenderPlugin extends CordovaPlugin{
 
-	private Mail m = new Mail("brunotrs@gmail.com", "edimbrarocks");
+	private Mail m = new Mail("youremail@gmail.com", "yourpassword");
 	
 	@Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
@@ -39,7 +39,7 @@ public class GmailsenderPlugin extends CordovaPlugin{
 		 *  	"GmailsenderPlugin", 
 		 *  	"send",
 		 *  	[
-		 *  		"vruno.alassia@gmail.com",
+		 *  		["mail1@gmail.com", "mail2@gmail.com"],
 		 *  		"This is the subject",     
 		 *  		"This is the body"
 		 *  	]
